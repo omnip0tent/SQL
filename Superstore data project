@@ -30,15 +30,17 @@ VALUES
 #For this project, I used SQL to query the Superstore database to get information about items sold at the store and their prices.
 
 #Use a SELECT statement to order the items by price.
-SELECT item_name, price
-FROM superstore
-ORDER BY price desc;
+select item_name, price
+from superstore
+Order by price desc
 
 #Show a statistic about the item prices.
-SELECT avg(price)
-FROM superstore;
+select avg (price)
+from superstore
+where category="Electronics";
 
 #Show a statistic about the price for items in the category of "Kitchen Supplies". 
-SELECT avg(price)
-FROM superstore
-WHERE category="Kitchen Supplies"
+select average_rating, item_name, price
+from superstore
+where price<499.99
+order by price desc;
