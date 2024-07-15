@@ -57,7 +57,7 @@ VALUES
 
 #For this project I used SQL to query the data in a variety of ways which may be useful to someone looking to explore their options with potential employers.
 
-#Used SQL to identify companies offering more or less than 20 days of PTO per year
+#Used SQL with CASE statements to identify companies offering more or less than 20 days of PTO per year
 
 select *,
 case when paid_time_off_days >=20 then "Good PTO"
@@ -66,11 +66,26 @@ end as "Good or Bad PTO"
 from fortune_companies
 order by "Good or Bad PTO";
 
-#Used SQL to identify the industries offering an average of 15 or more PTO days per year.
+#Used SQL & HAVING operator to identify & rank the industries offering an average of 15 or more PTO days per year
 
 select industry, healthcare_benefits, AVG(Paid_time_off_days)
 from fortune_companies
 Group by industry
 Having AVG(paid_time_off_days) >=15
 order by AVG(paid_time_off_days) desc;
+
+#Used SQL to show which companies offered healthcare benefits & maternity leave.
+
+SELECT company_name, healthcare_benefits, avg_employee_tenure
+FROM fortune_companies
+WHERE healthcare_benefits=1
+AND avg_employee_tenure=>5
+ORDER BY avg_employee_tenure DESC;
+
+#Used SQL to identify how much revenue each company makes per employee
+
+SELECT company_name, employees/revenue as Revenue_per_Employee
+FROM fortune_companies
+ORDER BY Revenue_per_Employee desc;
+
 
