@@ -74,7 +74,7 @@ Group by industry
 Having AVG(paid_time_off_days) >=15
 order by AVG(paid_time_off_days) desc;
 
-#Used SQL to show which companies offered healthcare benefits & maternity leave.
+#Used SQL to show which companies offered healthcare benefits & had an AVG employee tenure of more than 5 years.
 
 SELECT company_name, healthcare_benefits, avg_employee_tenure
 FROM fortune_companies
@@ -82,10 +82,14 @@ WHERE healthcare_benefits=1
 AND avg_employee_tenure=>5
 ORDER BY avg_employee_tenure DESC;
 
-#Used SQL to identify how much revenue each company makes per employee
+#Used SQL to identify how much revenue each company makes per employee they employ.
 
 SELECT company_name, employees/revenue as Revenue_per_Employee
 FROM fortune_companies
 ORDER BY Revenue_per_Employee desc;
+
+#Used SQL to 
+
+SELECT 
 
 
