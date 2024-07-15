@@ -88,8 +88,11 @@ SELECT company_name, employees/revenue as Revenue_per_Employee
 FROM fortune_companies
 ORDER BY Revenue_per_Employee desc;
 
-#Used SQL to 
+#Used SQL to identify which companies that have over 10,000 employees offer 10 or more weeks of maternity leave.
 
-SELECT 
+SELECT company_name, maternity_leave_weeks, employees
+FROM fortune_companies
+WHERE maternity_leave_weeks >=10
+AND employees >=10000
 
 
